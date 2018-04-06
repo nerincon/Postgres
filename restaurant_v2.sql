@@ -1,3 +1,7 @@
+-- IF WANT TO DELETE TABLE COMPLETELY, USE QUERY BELOW.
+--DROP TABLE review;
+
+
 -- CREATE SCHEMAS
 
 CREATE TABLE restaurant (
@@ -18,7 +22,7 @@ CREATE TABLE review (
   id SERIAL NOT NULL PRIMARY KEY,
   stars INTEGER CHECK (stars >=0 and stars <=5),
   title VARCHAR,
-  review INTEGER,
+  review VARCHAR,
   reviewer_id INTEGER REFERENCES reviewer (id),
   restaurant_id INTEGER REFERENCES restaurant (id)
 );
@@ -169,4 +173,60 @@ INSERT INTO reviewer VALUES (
 
 INSERT INTO reviewer VALUES (
   DEFAULT, 'Karisa Lafuente', 'lafuente@gmail.com', 3
+);
+
+INSERT INTO review VALUES (
+  DEFAULT, 4, 'Awesome Burger', 'This place has great buffalo burgers!', 5,9
+);
+
+INSERT INTO review VALUES (
+  DEFAULT, 5, 'Look Nowhere else for pasta', 'You must get the pasta bolognese at this place. Unbelivable', 8,3
+);
+
+INSERT INTO review VALUES (
+  DEFAULT, 5, 'Best BBQ in Texas!', 'Best ribs in town. Best get them quick. They go fast', 1,12
+);
+
+INSERT INTO review VALUES (
+  DEFAULT, 4, 'Great Quick Burger', 'The burgers here are top of the line. They cook it well and quick', 17,9
+);
+
+INSERT INTO review VALUES (
+  DEFAULT, 3, 'Expensive Fast Food', 'This place has good food but too expensive. Quick service though', 22,6
+);
+
+INSERT INTO review VALUES (
+  DEFAULT, 4, 'Best SA food in town', 'Great south african food, quite expensive though', 15,10
+);
+
+INSERT INTO review VALUES (
+  DEFAULT, 1, 'Not the best Mexican Food in Town', 'Could get better and cheaper food anywhere else', 12,4
+);
+
+INSERT INTO review VALUES (
+  DEFAULT, 2, 'Too Salty!', 'Good steakhouse, but too salty. Also, service not great', 3,1
+);
+
+INSERT INTO review VALUES (
+  DEFAULT, 3, 'Why so popular', 'Ok, this place is good but not great. Why so popular??', 14,8
+);
+
+INSERT INTO review VALUES (
+  DEFAULT, 4, 'Top Brunches in Houston', 'Want a chill and inexpensive brunch? Look no further.', 19,11
+);
+
+INSERT INTO review VALUES (
+  DEFAULT, 5, 'Best Steakhouse', 'Better than Fogo. Not too salty and great service', 3,2
+);
+
+INSERT INTO review VALUES (
+  DEFAULT, 2, 'Dropped Quality', 'This place hwas great two years ago. Not so much anymore', 18,13
+);
+
+INSERT INTO review VALUES (
+  DEFAULT, 4, 'Cool place for Ramen', 'Not the best ramen, but it will do', 11,5
+);
+
+INSERT INTO review VALUES (
+  DEFAULT, 1, 'Too expensive', 'To expensive for what they offer', 7,6
 );
