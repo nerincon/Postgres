@@ -312,3 +312,7 @@ SELECT songwriters.name AS song_writer, artists.name AS artist FROM artists
   JOIN songwriters ON songs.id = songwriters.song_id
   WHERE songwriters.name = 'Lori Gibson'
   GROUP BY songwriters.name, artists.name;
+
+-- Given a lead artist, what collaborators has he worked with? Note: Any Given band will have a leader and collaborators
+SELECT name, lead_bol AS leader, collaborator_bol AS collaborator FROM artists
+  WHERE bandname = 'The Lost Ages'
