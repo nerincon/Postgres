@@ -1,7 +1,7 @@
 -- CREATE SCHEMAS
 
 CREATE TABLE artists (
-  id INTEGER NOT NULL UNIQUE,
+  id INTEGER NOT NULL,
   name VARCHAR,
   bandname VARCHAR,
   lead_bol BOOLEAN,
@@ -10,14 +10,14 @@ CREATE TABLE artists (
 );
 
 CREATE TABLE albums (
-  id INTEGER NOT NULL UNIQUE,
+  id INTEGER NOT NULL,
   name VARCHAR,
   artist_id INTEGER,
   song_id INTEGER
 );
 
 CREATE TABLE songs (
-  id INTEGER NOT NULL UNIQUE,
+  id INTEGER NOT NULL,
   name VARCHAR,
   duration INTEGER,
   track BOOLEAN,
@@ -26,7 +26,7 @@ CREATE TABLE songs (
 );
 
 CREATE TABLE songwriters (
-  id INTEGER NOT NULL UNIQUE,
+  id INTEGER NOT NULL,
   name VARCHAR,
   song_id INTEGER
 );
@@ -124,11 +124,11 @@ INSERT INTO artists VALUES (
 );
 
 INSERT INTO artists VALUES (
-  4, 'Eugena Cawthorne', 'Lion and the Champs', FALSE, TRUE, 4
+  4, 'Eugena Cawthorne', 'Lion and the Champs', FALSE, TRUE, 3
 );
 
 INSERT INTO artists VALUES (
-  3, 'Genevive Piekarski', 'Lion and the Champs', TRUE, FALSE, 3
+  3, 'Genevive Piekarski', 'Lion and the Champs', TRUE, FALSE, 4
 );
 
 INSERT INTO artists VALUES (
@@ -180,11 +180,11 @@ INSERT INTO songs VALUES (
 );
 
 INSERT INTO songs VALUES (
-  9, 'Lighting Rod', 160, FALSE, 1, 3
+  9, 'Lighting Rod', 160, TRUE, 1, 3
 );
 
 INSERT INTO songs VALUES (
-  10, 'Crazy', 180, FALSE, 1, 3
+  10, 'Crazy', 180, TRUE, 1, 3
 );
 
 INSERT INTO songwriters VALUES (
@@ -227,11 +227,11 @@ INSERT INTO albums VALUES (
 );
 
 INSERT INTO songs VALUES (
-  11, 'London Calling', 220, FALSE, 1, 3
+  11, 'London Calling', 220, FALSE, 1, 4
 );
 
 INSERT INTO songs VALUES (
-  12, 'Boston', 185, FALSE, 1, 3
+  12, 'Boston', 185, FALSE, 1, 4
 );
 
 INSERT INTO songwriters VALUES (
@@ -241,3 +241,4 @@ INSERT INTO songwriters VALUES (
 INSERT INTO songwriters VALUES (
   4, 'Andres Quimby', 12
 );
+
